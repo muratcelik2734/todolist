@@ -1,0 +1,27 @@
+ <div class="container mt-5">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">İsim</th>
+        <th scope="col">Email</th>
+        <th scope="col">Kullanıcı Tipi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of userList;">
+        <td>{{item?.name}} {{item?.surname}}</td>
+        <td>{{item?.email}}</td>
+        <td>
+          <button class="btn btn-warning  btn-login fw-bold" *ngIf="item?.userType === false" (click)="updateStatus(item)">
+            Normal
+          </button>
+          <button class="btn btn-success btn-login fw-bold" *ngIf="item?.userType === true" (click)="updateStatus(item)">
+            Admin
+          </button>
+        </td>
+      </tr>
+     
+    </tbody>
+  </table>
+ </div>
+  

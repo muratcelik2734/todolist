@@ -1,0 +1,12 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+        <a class="navbar-brand"><h3>TodoListApp</h3></a>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item p-3 text-secondary btn" [routerLink]="'/pages/todo-list'"><b>Yapılacaklar Listesi</b></li>
+          <li class="nav-item p-3 text-info btn" [routerLink]="'/pages/user-list'"><b>Kullanıcılar Listesi</b></li>
+          <li class="nav-item p-3 text-warning btn" (click)="logOut()"><b>Çıkış Yap</b></li>
+        </ul>
+      </div>
+  </div>
+</nav>

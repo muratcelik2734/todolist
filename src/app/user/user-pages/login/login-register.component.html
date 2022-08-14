@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card border-0 shadow rounded-3 my-5">
+        <div class="card-body p-4 p-sm-5" [formGroup]="form">
+          <h5 class="card-title text-center mb-5 fw-light fs-5">
+            {{ selectPageType === pageType.login ? "Giriş Yap" : "Kaydol" }}
+          </h5>
+          <div class="form-floating mb-3" *ngIf="selectPageType !== pageType.login">
+            <input
+              type="text"
+              class="form-control"
+              id="floatingInput"
+              placeholder="Ad"
+              formControlName="name"
+              formInvalid
+
+            />
+            <label for="floatingInput">İsim</label>
+          </div>
+          <div class="form-floating mb-3" *ngIf="selectPageType !== pageType.login">
+            <input
+              type="text"
+              class="form-control"
+              id="floatingInput"
+              placeholder="Soyisim"
+              formControlName="surname"
+              formInvalid
+
+            />
+            <label for="floatingInput">Soyisim</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              class="form-control"
+              id="floatingInput"
+              placeholder="name@site.com"
+              formControlName="email"
+              formInvalid
+            />
+            <label for="floatingInput">E-mail</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="password"
+              class="form-control"
+              id="floatingPassword"
+              placeholder="Şifre"
+              formControlName="password"
+              formInvalid
+            />
+            <label for="floatingPassword">Şifre</label>
+          </div>
+
+          <div class="d-grid">
+            <button class="btn btn-primary btn-login text-uppercase fw-bold" (click)="login()" *ngIf=" selectPageType === pageType.login ">
+              Giriş Yap
+            </button>
+            <button class="btn btn-primary btn-login text-uppercase fw-bold" (click)="register()" *ngIf="selectPageType === pageType.register">
+              Kaydol
+            </button>
+          </div>
+          <ng-container *ngIf="selectPageType !== pageType.register">
+            <hr class="my-4" />
+            <div class="d-grid mb-2">
+              <button
+                class="btn btn-warning btn-google btn-login text-uppercase fw-bold"
+                (click)="kayitOl()"
+              >
+                Kayıt Ol
+              </button>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
